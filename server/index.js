@@ -21,14 +21,13 @@ const getTimes = async() => {
 
 
 (async function() {
-    for (let i = 0; i < 2;) {
+    for (let i = 0; i < 2; i++) {
         const times = await getTimes();
         if (times) {
             domContentLoadedEventEndTimings.push(times.domContentLoadedEventEnd);
             domCompleteTimings.push(times.domComplete);
             loadEventEndTimings.push(times.loadEventEnd);
             console.log(`Running iteration #: ${ i+ 1}`, times);
-            i++;
         } else {
             console.log(`Did not work work for iteration #: ${i + 1}, trying again...
             `);
